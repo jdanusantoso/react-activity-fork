@@ -11,3 +11,15 @@ test('properly multiply two numbers', () => {
 test('properly multiply two numbers', () => {
     expect(multiply(9, 15)).toBe(135)
 })
+
+test('properly multiply two numbers', () => {
+    expect(multiply(-9, 10)).toBe(-90)
+})
+
+test('properly multiply two numbers', () => {
+    expect(multiply(-5, -10)).toBe(+50)
+})
+
+test('properly multiply two numbers', () => {
+    expect(multiply(-5, -10)).toBe(50)
+})

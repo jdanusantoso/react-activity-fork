@@ -1,28 +1,28 @@
-const divide = require('./divide')
+const divideRounding = require('./divideRounding')
 
 test('properly divide two numbers', () => {
-    expect(divide(4, 1)).toBe(4)
-})
-
-test('properly divide two numbers', () => {
-    expect(divide(9, 3)).toBe(3)
+    expect(divideRounding(4, 6)).toBe(0.67)
 })
 
 test('properly divide two numbers', () => {
-    expect(divide(9, 15)).toBe(0.6)
+    expect(divideRounding(9, 20)).toBe(0.45)
+})
+
+test('properly divide two numbers', () => {
+    expect(divideRounding(9, 15)).toBe(0.600)
 })
 
 
-test('properly multiply two numbers', () => {
-    expect(divide(-9, 10)).toBe(-0.9)
+test('properly divideRounding two numbers', () => {
+    expect(divideRounding(-9, 11)).toBe(-0.82)
 })
 
-test('properly multiply two numbers', () => {
-    expect(divide(-10, -5)).toBe(2)
+test('properly divide two numbers', () => {
+    expect(divideRounding(-10, -1000)).toBe(0.01)
 })
 
 
-test('properly multiply two numbers', () => {
-    expect(divide(-5, -6)).toBe(0.8333333333333334)
+test('properly divide two numbers', () => {
+    expect(divideRounding(-5, -6)).toBe(0.83)
 })
 

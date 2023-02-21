@@ -26,6 +26,7 @@ test('should render completed todo component', () => {
     expect(todoElement).not.toContainHTML('<strike>');
 })
 
+//snapshot 
 test ('matches snapshot', () => {
     const todo = {id: 1, title: 'wash dishes', completed: false, };
     const tree = renderer.create(<Todo todo={todo}/>).toJSON();

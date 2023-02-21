@@ -5,6 +5,7 @@ import Button from './../button';
 import { isTSAnyKeyword } from '@babel/types';
 import { render, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom';
+import renderer from "react-test-renderer"
 
 afterEach(cleanup);
 
@@ -28,4 +29,11 @@ it("renders button correctly again", () => {
     const {getByTestId} = render(<Button label="save"></Button>);
     //render the element and attach it to the div
     expect(getByTestId('button')).toHaveTextContent("save");
+})
+
+it("matches snapshot", () => {
+    //creates dom (like virtual dom) and convert to json
+    const tree = renderer.create(<Button label="save"></Button>).toJSON;
+    //goes into the folder structure and looks for snapshot
+    expect(tree).toMatchSnapshot();
 })

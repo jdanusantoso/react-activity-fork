@@ -84,6 +84,18 @@ it('should render same text passed into title prop -qb', () => {
      expect(h1Element).not.toBeInTheDocument
  });
 
+ //WITH GET ALL BY
+
+ it('should render same text passed into title prop-get-all-by', () => {
+     render(
+         <Header 
+           title="todo"
+         />
+     );
+     const h1Elements = screen.getAllByText(/todo/i);
+     expect(h1Elements.length).toBe(1);
+ });
+
 // it('should render same text passed into title prop', () => {
 //     render(
 //         <Header 

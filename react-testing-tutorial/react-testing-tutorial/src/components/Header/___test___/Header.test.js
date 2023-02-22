@@ -17,6 +17,22 @@ test('renders learn react link-fail', () => {
     expect(headingElement).toBeInTheDocument();
   });
 
+  /*TEST 2*/ 
+
+//FAILED TEST
+test('should render same text passed into title prop-fail', () => {
+    render(<Header title="My Header"/>);
+    const headingElement = screen.getByRole("paragraph");
+    expect(headingElement).toBeInTheDocument();
+  });
+
+  //SUCCESSFUL TEST
+  test('should render same text passed into title prop-pass', () => {
+    render(<Header title="My Header"/>);
+    const headingElement = screen.getByRole("heading");
+    expect(headingElement).toBeInTheDocument();
+  });
+
 // it('should render same text passed into title prop', () => {
 //     render(
 //         <Header 

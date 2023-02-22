@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import Header from '../Header';
 
+/*TEST 1*/ 
+
 //FAILED TEST
 test('renders learn react link-fail', () => {
     render(<Header title="My Header"/>);
@@ -8,6 +10,7 @@ test('renders learn react link-fail', () => {
     expect(headingElement).toBeInTheDocument();
   });
 
+  //SUCCESSFUL TEST
   test('renders learn react link-pass', () => {
     render(<Header title="My Header"/>);
     const headingElement = screen.getByText(/my header/i);

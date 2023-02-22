@@ -49,6 +49,14 @@ test('should render same text passed into title prop-fail', () => {
     expect(headingElement).toBeInTheDocument();
   });
 
+  /*TEST 4 : Test Id*/
+  
+  it('should render same text passed into title prop-test_id-pass', () => {
+    render(<Header title="My Header"/>);
+    const headingElement = screen.getByTestId("header-2");
+    expect(headingElement).toBeInTheDocument();
+  });
+
 // it('should render same text passed into title prop', () => {
 //     render(
 //         <Header 

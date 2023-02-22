@@ -71,6 +71,19 @@ it('should render same text passed into title prop', async () => {
      expect(h1Element).toBeInTheDocument();
      });
 
+// WITH QUERYBY
+
+it('should render same text passed into title prop -qb', () => {
+     render(
+         <Header 
+           title="todo"
+         />
+     );
+     const h1Element = screen.queryByText(/dogs/i);
+     // eslint-disable-next-line jest/valid-expect, no-unused-expressions
+     expect(h1Element).not.toBeInTheDocument
+ });
+
 // it('should render same text passed into title prop', () => {
 //     render(
 //         <Header 

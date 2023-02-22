@@ -18,6 +18,7 @@ test('renders learn react link-fail', () => {
   });
 
   /*TEST 2*/ 
+//Get by role mimics what the user will be doing.
 
 //FAILED TEST
 test('should render same text passed into title prop-fail', () => {
@@ -37,6 +38,14 @@ test('should render same text passed into title prop-fail', () => {
   test('should render same text passed into title prop-pass-2', () => {
     render(<Header title="My Header"/>);
     const headingElement = screen.getByRole("heading", { name: "My Header"});
+    expect(headingElement).toBeInTheDocument();
+  });
+
+  /*TEST 3 : Semantic Tags*/
+  
+  it('should render same text passed into title prop-semantic-pass-2', () => {
+    render(<Header title="My Header"/>);
+    const headingElement = screen.getByTitle("Header");
     expect(headingElement).toBeInTheDocument();
   });
 

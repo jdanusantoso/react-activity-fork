@@ -57,6 +57,20 @@ test('should render same text passed into title prop-fail', () => {
     expect(headingElement).toBeInTheDocument();
   });
 
+// WITH FINDBY
+//Asynchronous functions use find by
+
+it('should render same text passed into title prop', async () => {
+    render(
+    <Header 
+           title="todo"
+         />
+     );
+     //need await or test fails
+     const h1Element = await screen.findByText(/todo/i);
+     expect(h1Element).toBeInTheDocument();
+     });
+
 // it('should render same text passed into title prop', () => {
 //     render(
 //         <Header 

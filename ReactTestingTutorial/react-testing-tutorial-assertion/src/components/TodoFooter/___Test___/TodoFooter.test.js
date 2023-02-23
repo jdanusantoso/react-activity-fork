@@ -102,3 +102,17 @@ it('should render not be falsy', () => {
    const pElement = screen.getByText(/1 task left/i);
    expect(pElement).not.toBeFalsy();
  });
+
+  /*TEST 8: Assert element value*/ 
+//Used to determine if test the opposite
+//FAILED TEST because it cannot find 1 elements on the site
+
+  it('should render the correct assert text content value', () => {
+   render(
+       <MockTodoFooter 
+         numberOfIncompleteTasks={1}
+       />
+   );
+   const pElement = screen.getByText(/1 task left/i);
+   expect(pElement.value).toBe("1 task left");
+ });

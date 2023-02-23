@@ -74,3 +74,17 @@ it('should contain p tag with correct text', () => {
      const pElement = screen.getByText(/1 task left/i);
      expect(pElement).toContain('p');
    });
+
+/*TEST 6: Have text content*/ 
+//Used to determine if the value has the text content
+//FAILED TEST because it cannot find 1 elements on the site
+   
+  it('should render correct text content', () => {
+   render(
+       <MockTodoFooter 
+         numberOfIncompleteTasks={1}
+       />
+   );
+   const pElement = screen.getByText(/1 task left/i);
+   expect(pElement).toHaveTextContent("1 task left");
+ });

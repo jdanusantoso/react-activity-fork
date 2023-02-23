@@ -46,3 +46,17 @@ it('should render "task" when the number of incomplete tasks is one', async () =
    const pElement = screen.getByText(/1 task left/i);
    expect(pElement).toBeTruthy();
  });
+
+ /*TEST 4*/ 
+//Used to determine if a value is visible to the user
+//FAILED TEST because it cannot find 1 elements on the site
+
+it('"task" should be visible when the number of incomplete tasks is one', () => {
+     render(
+         <MockTodoFooter 
+           numberOfIncompleteTasks={1}
+         />
+     );
+     const pElement = screen.getByText(/1 task left/i);
+     expect(pElement).toBeVisible();
+   });

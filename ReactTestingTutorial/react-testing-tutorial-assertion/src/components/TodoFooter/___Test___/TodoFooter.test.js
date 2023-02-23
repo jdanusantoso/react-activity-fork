@@ -114,5 +114,5 @@ it('should render not be falsy', () => {
        />
    );
    const pElement = screen.getByText(/1 task left/i);
-   expect(pElement.value).toBe("1 task left");
+   expect(pElement.textContent).toBe("1 task left");
  });

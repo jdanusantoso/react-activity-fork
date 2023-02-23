@@ -33,7 +33,7 @@ it('should render "task" when the number of incomplete tasks is one', async () =
   expect(paragraphElement).toBeInTheDocument();
 });
 
-/*TEST 3*/ 
+/*TEST 3: Truthy*/ 
 //Used to determine if a value is boolean true
 //FAILED TEST because it cannot find 1 elements on the site
 
@@ -47,7 +47,7 @@ it('should render "task" when the number of incomplete tasks is one', async () =
    expect(pElement).toBeTruthy();
  });
 
- /*TEST 4*/ 
+ /*TEST 4: Visibility*/ 
 //Used to determine if a value is visible to the user
 //FAILED TEST because it cannot find 1 elements on the site
 
@@ -59,4 +59,18 @@ it('"task" should be visible when the number of incomplete tasks is one', () => 
      );
      const pElement = screen.getByText(/1 task left/i);
      expect(pElement).toBeVisible();
+   });
+
+   /*TEST 5: Contains*/ 
+//Used to determine if the value contains a tag
+//FAILED TEST because it cannot find 1 elements on the site
+
+it('should contain p tag with correct text', () => {
+     render(
+         <MockTodoFooter 
+           numberOfIncompleteTasks={1}
+         />
+     );
+     const pElement = screen.getByText(/1 task left/i);
+     expect(pElement).toContain('p');
    });

@@ -24,3 +24,25 @@ it('should render the correct amount of incomplete task', async () => {
 
   /*TEST 2*/ 
 
+//FAILED TEST because it cannot find 1 elements on the site
+it('should render "task" when the number of incomplete tasks is one', async () => {
+  render(<MockTodoFooter 
+    numberOfIncompleteTasks={5}
+    />);
+  const paragraphElement = screen.getByText(/1 tasks left/i);
+  expect(paragraphElement).toBeInTheDocument();
+});
+
+/*TEST 3*/ 
+//Used to determine if a value is boolean true
+//FAILED TEST because it cannot find 1 elements on the site
+
+ it('p element should be truthy when the number of incomplete tasks is one', () => {
+   render(
+       <MockTodoFooter 
+         numberOfIncompleteTasks={1}
+       />
+   );
+   const pElement = screen.getByText(/1 task left/i);
+   expect(pElement).toBeTruthy();
+ });

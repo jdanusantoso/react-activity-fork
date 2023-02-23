@@ -20,6 +20,8 @@ describe("AddInput", () => {
         expect(inputElement).toBeInTheDocument();
     });
 
+    /*Test 2
+    Making sure the text changes after we put it in there*/
     it ("should be able to type into input", () => {
         render(
             <AddInput 
@@ -31,7 +33,9 @@ describe("AddInput", () => {
         );
 
         const inputElement = screen.getByPlaceholderText(/Add a new task here.../i);
+        //Fire a change event
         fireEvent.change(inputElement, { target: { value: "Go Grocery Shopping"}})
+        //Expect the placeholder to the new text that we have inputted
         expect(inputElement.value).toBe("Go Grocery Shopping");
             
         });

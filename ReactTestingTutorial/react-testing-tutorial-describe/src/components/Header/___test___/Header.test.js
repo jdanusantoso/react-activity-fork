@@ -3,12 +3,12 @@ import Header from '../Header';
 
 /*TEST 1*/ 
 
-// //FAILED TEST
-// test('renders learn react link-fail', () => {
-//     render(<Header title="My Header"/>);
-//     const headingElement = screen.getByText(/learn react/i);
-//     expect(headingElement).toBeInTheDocument();
-//   });
+// FAILED TEST
+ test('renders learn react link-fail', () => {
+     render(<Header title="My Header"/>);
+     const headingElement = screen.getByText(/learn react/i);
+     expect(headingElement).toBeInTheDocument();
+   });
 
   //SUCCESSFUL TEST
   test('renders learn react link-pass', () => {
@@ -20,12 +20,12 @@ import Header from '../Header';
   /*TEST 2*/ 
 //Get by role mimics what the user will be doing.
 
-// //FAILED TEST
-// test('should render same text passed into title prop-fail', () => {
-//     render(<Header title="My Header"/>);
-//     const headingElement = screen.getByRole("paragraph");
-//     expect(headingElement).toBeInTheDocument();
-//   });
+// FAILED TEST
+ test('should render same text passed into title prop-fail', () => {
+     render(<Header title="My Header"/>);
+     const headingElement = screen.getByRole("paragraph");
+     expect(headingElement).toBeInTheDocument();
+   });
 
   //SUCCESSFUL TEST
   test('should render same text passed into title prop-pass', () => {

@@ -88,3 +88,17 @@ it('should contain p tag with correct text', () => {
    const pElement = screen.getByText(/1 task left/i);
    expect(pElement).toHaveTextContent("1 task left");
  });
+
+ /*TEST 7: No*/ 
+//Used to determine if test the opposite
+//FAILED TEST because it cannot find 1 elements on the site
+
+it('should render not be falsy', () => {
+   render(
+       <MockTodoFooter 
+         numberOfIncompleteTasks={1}
+       />
+   );
+   const pElement = screen.getByText(/1 task left/i);
+   expect(pElement).not.toBeFalsy();
+ });

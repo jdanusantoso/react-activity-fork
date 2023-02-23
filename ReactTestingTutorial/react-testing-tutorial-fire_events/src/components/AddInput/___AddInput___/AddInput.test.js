@@ -54,9 +54,11 @@ describe("AddInput", () => {
         );
 
         const inputElement = screen.getByPlaceholderText(/Add a new task here.../i);
+        //Get the button element by role
         const buttonElement = screen.getByRole("button", { name: /Add/i})
         //Fire a change event
         fireEvent.change(inputElement, { target: { value: "Go Grocery Shopping"}})
+        //Fire a click event
         fireEvent.click(buttonElement)
         //Expect the placeholder to be blank after clicking button
         expect(inputElement.value).toBe("");

@@ -12,12 +12,12 @@ const MockFollowersList = () => {
 
 /*TEST 1*/ 
 
-// FAILED TEST
+// Find the first element
 describe("FollowersList", () => {
-    test('renders learn react link-fail', () => {
+    test('renders learn react link-fail', async () => {
         render(<MockFollowersList />);
-        const headingElement = screen.getByText(/learn react/i);
-        expect(headingElement).toBeInTheDocument();
+        const followerDivElement = await screen.findByTestId("follower-item-0");
+        expect(followerDivElement).toBeInTheDocument();
    });
 
 })

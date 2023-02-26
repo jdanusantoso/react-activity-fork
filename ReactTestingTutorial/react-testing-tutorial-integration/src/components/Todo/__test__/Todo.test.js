@@ -35,7 +35,6 @@ describe("Todo", () => {
 
 /*TEST Multiple Elements*/ 
 
-
 it('should render multiple items', () => {
     render(
         <MockTodo />
@@ -44,6 +43,8 @@ it('should render multiple items', () => {
     const divElements = screen.queryAllByText(/Go Grocery Shopping/i);
     expect(divElements.length).toBe(3)
 });
+
+/*TEST Complete Class Element*/ 
 
 it('task should not have complete class when initally rendered', () => {
   render(

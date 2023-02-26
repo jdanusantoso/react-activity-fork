@@ -1,4 +1,4 @@
-//Mocking a response
+//Mocking a response and getting dummy data
 const mockResponse = {
     data: {
         results: [

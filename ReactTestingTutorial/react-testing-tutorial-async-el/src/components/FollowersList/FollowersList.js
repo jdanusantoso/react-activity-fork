@@ -19,9 +19,12 @@ export default function FollowersList() {
     return (
         <div className="followerslist-container">
             <div>
-                {followers.map(follower => (
+                {followers.map((follower, index) => (
                     <div 
-                    className="follower-item">
+                        className="follower-item"
+                        key={index}
+                        data-testid={`follower-item-${index}`}
+                    >
                         <img src={follower.picture.large}/>
                         <div className="followers-details">
                             <div className="follower-item-name">

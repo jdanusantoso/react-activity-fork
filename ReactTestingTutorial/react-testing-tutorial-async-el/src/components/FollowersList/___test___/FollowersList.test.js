@@ -10,7 +10,7 @@ const MockFollowersList = () => {
     )
 }
 
-/*TEST 1*/ 
+/*TEST -> find the first element being rendered on the page*/ 
 
 // Find the first element
 describe("FollowersList", () => {

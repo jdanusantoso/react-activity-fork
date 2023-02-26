@@ -14,11 +14,17 @@ const MockFollowersList = () => {
 
 // Find the first element
 describe("FollowersList", () => {
-    test('renders learn react link-fail', async () => {
+    it('should render follower items', async () => {
         render(<MockFollowersList />);
         const followerDivElement = await screen.findByTestId("follower-item-0");
         expect(followerDivElement).toBeInTheDocument();
    });
+
+   it('should render multiple follower items', async () => {
+    render(<MockFollowersList />);
+    const followerDivElements = await screen.findAllByTestId(/follower-item/i);
+    expect(followerDivElements.length).toBeInTheDocument(5);
+});
 
 })
  
